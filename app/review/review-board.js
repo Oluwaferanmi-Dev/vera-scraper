@@ -35,6 +35,7 @@ export function ReviewBoard({ reviewerEmail }) {
   const [candidates, setCandidates] = useState([]);
   const [filter, setFilter] = useState('pending_review');
   const [notice, setNotice] = useState('');
+  const [isTriggeringScrape, setIsTriggeringScrape] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const load = useCallback(async () => {
@@ -59,11 +60,28 @@ export function ReviewBoard({ reviewerEmail }) {
     });
   }
 
+  async function runScrape() {
+    setIsTriggeringScrape(true);
+    setNotice('');
+    try {
+      const response = await fetch('/api/run-scrape', { method: 'POST' });
+      const payload = await response.json();
+      setNotice(payload.message || payload.error || 'Could not start the scraper.');
+    } catch {
+      setNotice('Could not start the scraper. Check your connection and try again.');
+    } finally {
+      setIsTriggeringScrape(false);
+    }
+  }
+
   return (
     <main className="desk-shell">
       <header className="desk-header">
         <div><p className="eyebrow">VERA / EVENT CANDIDATES</p><h1>The Review Desk</h1></div>
-        <div className="reviewer">Signed in as <strong>{reviewerEmail}</strong></div>
+        <div className="header-actions">
+          <button className="run-scrape" disabled={isTriggeringScrape} onClick={runScrape}>{isTriggeringScrape ? 'Starting scan…' : 'Run scraper ↗'}</button>
+          <div className="reviewer">Signed in as <strong>{reviewerEmail}</strong></div>
+        </div>
       </header>
       <section className="intro"><p>Fresh discoveries from trusted sources. Nothing moves to the live platform unless you decide it belongs.</p><span>✦ HUMAN-CURATED</span></section>
       <nav className="filters" aria-label="Candidate status">

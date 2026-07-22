@@ -23,8 +23,11 @@ Deploy this repository to Vercel (the included app is a standard Next.js app). C
 - `SUPABASE_SERVICE_ROLE_KEY` — server-only; never prefix it with `NEXT_PUBLIC_`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `VERA_REVIEWER_EMAILS` — Vera's approved email address, or a comma-separated reviewer list
+- `GITHUB_REPOSITORY` — e.g. `Oluwaferanmi-Dev/vera-scraper`
+- `GITHUB_ACTIONS_TOKEN` — a fine-grained GitHub token limited to this repository with **Actions: Read and write** permission
+- `GITHUB_WORKFLOW_REF` — normally `main`
 
-Give Vera the deployed URL. She enters her approved email and receives a Supabase magic link; the application then shows the pending queue where she can approve or reject each candidate. The service-role key is used only inside authenticated server routes.
+Give Vera the deployed URL. She enters her approved email and receives a Supabase magic link; the application then shows the pending queue where she can approve or reject each candidate. Once the GitHub variables are set, the **Run scraper** button safely dispatches the GitHub Actions workflow; its token remains in Vercel and is never sent to the browser. The service-role key is likewise used only inside authenticated server routes.
 
 The included GitHub Actions workflow runs daily at 04:17 UTC (and supports manual dispatch). Add `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` as production environment secrets before enabling it. It is intentionally sequential and waits for two seconds between every network request, including `robots.txt` checks.
 
