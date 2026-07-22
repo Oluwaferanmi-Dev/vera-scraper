@@ -67,11 +67,36 @@ export const SOURCES = [
     adapter: 'web-page',
     allowHtmlFallback: true, // Since it's a gaming site, the root page might be worth flagging
   },
-
+  {
+    key: 'aniwecon',
+    name: 'AniWeCon',
+    url: 'https://aniweconvention.com/',
+    adapter: 'web-page',
+    allowHtmlFallback: true,
+  },
+  {
+    key: 'africacomicade',
+    name: 'Africacomicade',
+    url: 'https://africacomicade.org/events/',
+    adapter: 'web-page',
+    allowHtmlFallback: true,
+  },
+  {
+    key: 'meiza',
+    name: 'Meiza Pop Culture',
+    url: 'https://meiza.ng/',
+    adapter: 'web-page',
+    allowHtmlFallback: true,
+  },
   {
     key: 'instagram-search',
     name: 'Instagram Puppeteer',
-    url: 'https://www.instagram.com/explore/tags/animeinnigeria/',
+    urls: [
+      'https://www.instagram.com/explore/tags/animeinnigeria/',
+      'https://www.instagram.com/explore/tags/lagoscomiccon/',
+      'https://www.instagram.com/explore/tags/nigeriancosplay/',
+      'https://www.instagram.com/explore/tags/africacomicade/'
+    ],
     adapter: 'puppeteer-social',
     platform: 'instagram'
   },

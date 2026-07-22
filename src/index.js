@@ -13,7 +13,7 @@ async function fetchWithTimeout(url, options) {
   return fetch(url, { ...options, signal: AbortSignal.timeout(20_000), redirect: 'follow' });
 }
 
-async function run() {
+export async function run() {
   const userAgent = process.env.SCRAPER_USER_AGENT || 'VeraEventDiscoveryBot/1.0 (+mailto:ops@example.com)';
   const requestDelayMs = Number(process.env.REQUEST_DELAY_MS || 2_000);
   const database = createDatabaseClient();
@@ -26,7 +26,14 @@ async function run() {
   
   if (usePuppeteer) {
     puppeteer.use(StealthPlugin());
-    browser = await puppeteer.launch({ headless: true });
+    const launchOptions = {
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    };
+    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+      launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+    }
+    browser = await puppeteer.launch(launchOptions);
   }
 
   // Applies equally to robots.txt and event-page requests, regardless of source.
@@ -60,10 +67,7 @@ async function run() {
   }
 
   const saved = await saveCandidates(database, candidates);
-  console.info(JSON.stringify({ completed: true, candidatesSaved: saved }));
+  const result = { completed: true, candidatesSaved: saved };
+  console.info(JSON.stringify(result));
+  return result;
 }
-
-run().catch((error) => {
-  console.error(error.message);
-  process.exitCode = 1;
-});
