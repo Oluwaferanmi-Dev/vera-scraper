@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tix Africa</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Clickjacking Protection (Legacy Browser Fallback):
+         Modern browsers use CSP frame-ancestors directive (see config/content-security-policy.js).
+         This style + script combo is a fallback for older browsers that don't support CSP.
+         See: https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html -->
+    <style id="antiClickjack">body { display: none !important; }</style>
+
+    <!-- CookieBot CMP — UK GDPR cookie consent
+         Manual blocking mode: CookieBot shows the consent dialog and records preferences but
+         never intercepts scripts. Auto mode blocked the ember-auto-import webpack chunks
+         (chunk.vendors, chunk.app) on deny/reload, preventing the AMD bridge from registering
+         ember-load-initializers and crashing the app on every non-allow consent choice.
+    -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="b6c26ad3-4eb9-4ee0-be87-faf1236b95cd"  type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforter&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="tix3/config/environment" content="%7B%22modulePrefix%22%3A%22tix3%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22history%22%2C%22googleKey%22%3A%22AIzaSyCFGrZBy16OmjKt8TDvubG9YSwDNKmFflk%22%2C%22paystackNGKey%22%3A%22pk_live_22da047ab4e0b41037bf214fa972839653b122fc%22%2C%22paystackGHKey%22%3A%22pk_live_f1842191aac21bae9adec590d9b2cbe9d34ffbd7%22%2C%22paystackSAKey%22%3A%22%22%2C%22flutterwaveKey%22%3A%22FLWPUBK-5651166715c9d99f2357610a81bdbd88-X%22%2C%22stripeUSKey%22%3A%22pk_live_51LUnD5CvIWXT1LkvkNv4eQUh1DAwyQGWKcWez3ZADTfqceXay37Gfi66Zs3vmHMM8nnELkCYc6SutBHQPkq09MbE00MnSfGdVG%22%2C%22stripeGBKey%22%3A%22pk_live_51LUnD5CvIWXT1LkvkNv4eQUh1DAwyQGWKcWez3ZADTfqceXay37Gfi66Zs3vmHMM8nnELkCYc6SutBHQPkq09MbE00MnSfGdVG%22%2C%22stripeRedirectUrl%22%3A%22https%3A%2F%2Ftix.africa%2Forder%22%2C%22crispId%22%3A%22869d6d7e-2d37-4df4-825d-8fa72911f5a7%22%2C%22posthogKey%22%3A%22phc_Y0iz6Xx1V9n14uw0ZCuRsKuyIjMRCqgFpB7STszUn6s%22%2C%22metaPixelId%22%3A%22232211144445039%22%2C%22REDIRECT_HOME_TO_DISCOVER%22%3Afalse%2C%22turnstileSiteKey%22%3A%220x4AAAAAAC1XBOEf1XgWBu1-%22%2C%22blockDisposableEmailDomains%22%3Atrue%2C%22EmberENV%22%3A%7B%22EXTEND_PROTOTYPES%22%3Afalse%2C%22FEATURES%22%3A%7B%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_NO_IMPLICIT_ROUTE_MODEL%22%3Atrue%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22tix3%22%2C%22version%22%3A%220.0.0%2B1b7aa3ba%22%7D%2C%22ember-simple-auth%22%3A%7B%22store%22%3A%22session-store%3Alocal-storage%22%2C%22routeAfterAuthentication%22%3A%22dashboard.events.all-events%22%7D%2C%22apollo%22%3A%7B%22apiURL%22%3A%22https%3A%2F%2Fcore.tix.africa%2Fgraphql%22%7D%2C%22useSimpleAddressInput%22%3Afalse%2C%22ember-cli-content-security-policy%22%3A%7B%22policy%22%3A%22default-src%20'none'%3B%20script-src%20'self'%20'unsafe-inline'%20'unsafe-eval'%20https%3A%2F%2Fconsent.cookiebot.com%20https%3A%2F%2Fcheckout.flutterwave.com%20https%3A%2F%2Ftix.statuspage.io%20https%3A%2F%2Fmaps.googleapis.com%20https%3A%2F%2Fwidget.crisp.chat%20https%3A%2F%2Fclient.crisp.chat%20https%3A%2F%2F*.posthog.com%20https%3A%2F%2F*.i.posthog.com%20https%3A%2F%2F*.paystack.co%20https%3A%2F%2F*.stripe.com%20https%3A%2F%2Fwww.googletagmanager.com%20https%3A%2F%2Fconnect.facebook.net%20https%3A%2F%2Fwww.facebook.com%20https%3A%2F%2Fapplepay.cdn-apple.com%20https%3A%2F%2Fchallenges.cloudflare.com%3B%20style-src%20'self'%20'unsafe-inline'%20https%3A%2F%2Ffonts.googleapis.com%20https%3A%2F%2Fclient.crisp.chat%3B%20font-src%20'self'%20https%3A%2F%2Ffonts.gstatic.com%20https%3A%2F%2Fclient.crisp.chat%20data%3A%3B%20img-src%20'self'%20data%3A%20blob%3A%20https%3A%3B%20connect-src%20'self'%20https%3A%2F%2Fconsent.cookiebot.com%20https%3A%2F%2Fconsentcdn.cookiebot.com%20https%3A%2F%2Fmaps.googleapis.com%20https%3A%2F%2F*.tix.africa%20https%3A%2F%2Fclient.crisp.chat%20wss%3A%2F%2Fclient.relay.crisp.chat%20https%3A%2F%2F*.posthog.com%20https%3A%2F%2F*.i.posthog.com%20https%3A%2F%2F*.paystack.co%20https%3A%2F%2F*.paystack.com%20https%3A%2F%2F*.stripe.com%20https%3A%2F%2Fcheckout.flutterwave.com%20https%3A%2F%2Fapi.ravepay.co%20https%3A%2F%2Fflw-events-ge.myflutterwave.com%20https%3A%2F%2Fwww.googletagmanager.com%20https%3A%2F%2Fconnect.facebook.net%20https%3A%2F%2Fwww.facebook.com%20https%3A%2F%2Fapi.cloudinary.com%20https%3A%2F%2Fapplepay.cdn-apple.com%20https%3A%2F%2F*.sentry.io%20https%3A%2F%2Fchallenges.cloudflare.com%3B%20media-src%20'self'%3B%20object-src%20'none'%3B%20base-uri%20'self'%3B%20form-action%20'self'%3B%20frame-src%20https%3A%2F%2Fconsentcdn.cookiebot.com%20https%3A%2F%2F*.paystack.co%20https%3A%2F%2F*.paystack.com%20https%3A%2F%2F*.stripe.com%20https%3A%2F%2Fcheckout.link.com%20https%3A%2F%2Fcheckout.flutterwave.com%20https%3A%2F%2Fcheckout-v3-ui-prod.f4b-flutterwave.com%20https%3A%2F%2F*.statuspage.io%20https%3A%2F%2Fwww.google.com%20https%3A%2F%2Fchallenges.cloudflare.com%3B%20frame-ancestors%20'none'%3B%22%2C%22reportOnly%22%3Afalse%7D%7D" />
+
+    <link integrity="" rel="stylesheet" href="/assets/vendor-05f7321dd4cfb6cdfcc1ecc83eec6532.css" />
+    <link integrity="" rel="stylesheet" href="/assets/tix3-93eff0c448d3de37919cd45d9328807a.css" />
+    <link rel="icon" href="/favicon.ico" />
+    <!--    Optimize Turnstile loading performance with resource hints, by establishing early connections to Cloudflare servers-->
+    <link rel="preconnect" href="https://challenges.cloudflare.com" />
+    
+  </head>
+  <body>
+    <!-- Clickjacking Protection: Frame busting script (defense in depth)
+         See: https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html#best-for-now-legacy-browser-frame-breaking-script -->
+    <script>
+      (function() {
+        // If we're the top window, remove the anti-clickjack style and show content
+        if (self === top) {
+          var antiClickjack = document.getElementById('antiClickjack');
+          if (antiClickjack) {
+            antiClickjack.parentNode.removeChild(antiClickjack);
+          }
+        } else {
+          // We're in a frame - attempt to break out
+          try {
+            top.location = self.location;
+          } catch (e) {
+            // If we can't break out (cross-origin), keep the page hidden
+            // The CSP frame-ancestors directive should also block this
+          }
+        }
+      })();
+    </script>
+
+    
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://checkout.flutterwave.com/v3.js" data-cookieconsent="ignore"></script>
+    <script src="https://tix.statuspage.io/embed/script.js" data-cookieconsent="ignore"></script>
+    <script>
+      function initMap() {
+        window.googleMapsReady = true;
+        window.dispatchEvent(new Event('google-maps-loaded'));
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv17bAH3bdwMWeXJ-QfqkXLwv85GE0cRc&libraries=places&loading=async" ></script>
+
+    <script src="/assets/vendor-7f5207ae3a72889a573875e36a3efad0.js" data-cookieconsent="ignore" integrity="sha256-OBYorbm6cICUX6yMsXpqOmhy/jRODKqQs/BlzZnPOwQ= sha512-wlL+7f3cMeApts126i5jpyiNPLeD9mkLGm4flVs0D2Hz2r4MaNAEZInREiWz0YIqEL6jyVHen5d/H3rV1qdZBQ==" ></script>
+<script src="/assets/chunk.937.253768c63b1b42077878.js" integrity="sha256-qsezk9k9JDmmuvrCvNX5KgyQt69F6/Idm9yWQeAnjp4= sha512-yIIjMAbTb9TTHpMEY7dCgucMeC5pc0MlSZ2Me+7Jei1jcxbAIi78AAU7MzLhSeyL2k71uSI7SPzp1hLJJxbfMQ==" ></script>
+<script src="/assets/chunk.524.b84bfcbd407a9a8ed2ce.js" integrity="sha256-ydgb9o4HheNH3deImDh1zcgmoTQVlrvC9wftVgJok5M= sha512-maNLZKvj1wMj+uaaGkH7P9rRrYK9r2mAG8nPBnjeu5xhDzscO2RnU7sdSi6WduJUeWw2O2lsFG701G4O37pi/g==" ></script>
+    <script src="/assets/tix3-0a2bcadfa804217fe2dfb6f1cc66e409.js" data-cookieconsent="ignore" integrity="sha256-RoTgnbIMWgH/tSvBwr/YlGu0jRWB0c+7cfW9vCxFjNg= sha512-JHj56DKGw6DDBZ7pXNJ4p7sqSEB3ofzTEwKX7sSYrMSgUtoVnmOX4G3MTPEXuJnVxgwXMq8At35L0g1Ngmzr3Q==" ></script>
+
+    <!-- Added a condition to ensure parentElement exists before execution in the external Flutterwave checkout script,
+     preventing errors in the Alwan library -->
+    <script>
+      setTimeout(() => {
+        Element.prototype.remove = function () {
+          if (this.parentElement) {
+            this.parentElement.removeChild(this);
+          }
+        };
+      }, 0);
+    </script>
+
+    
+  </body>
+</html>
