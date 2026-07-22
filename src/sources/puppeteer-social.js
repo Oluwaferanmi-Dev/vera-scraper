@@ -11,10 +11,16 @@ async function scrapeInstagram(page, source) {
      const user = process.env.IG_USERNAME;
      const pass = process.env.IG_PASSWORD;
      if (user && pass) {
-        await page.waitForSelector('input[name="username"]', { timeout: 10000 });
-        await page.type('input[name="username"]', user, { delay: 50 });
-        await page.type('input[name="password"]', pass, { delay: 50 });
-        await page.click('button[type="submit"]');
+        await page.waitForSelector('input[name="username"], input[name="email"]', { timeout: 10000 });
+        const isEmailForm = await page.$('input[name="email"]');
+        if (isEmailForm) {
+          await page.type('input[name="email"]', user, { delay: 50 });
+          await page.type('input[name="pass"]', pass, { delay: 50 });
+        } else {
+          await page.type('input[name="username"]', user, { delay: 50 });
+          await page.type('input[name="password"]', pass, { delay: 50 });
+        }
+        await page.keyboard.press('Enter');
         await page.waitForNavigation({ waitUntil: 'networkidle2' });
         await page.goto(source.url, { waitUntil: 'networkidle2' });
      } else {

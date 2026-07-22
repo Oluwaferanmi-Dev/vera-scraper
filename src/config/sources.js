@@ -67,12 +67,7 @@ export const SOURCES = [
     adapter: 'web-page',
     allowHtmlFallback: true, // Since it's a gaming site, the root page might be worth flagging
   },
-  {
-    key: 'google-cse-social',
-    name: 'Google Custom Search (X/IG)',
-    adapter: 'google-cse',
-    query: 'site:instagram.com OR site:x.com "nigeria" AND ("anime" OR "gaming" OR "cosplay" OR "comic con" OR "fandom")',
-  },
+
   {
     key: 'instagram-search',
     name: 'Instagram Puppeteer',
