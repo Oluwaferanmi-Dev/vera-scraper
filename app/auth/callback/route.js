@@ -8,5 +8,9 @@ export async function GET(request) {
     const supabase = await createServerSupabaseClient();
     await supabase.auth.exchangeCodeForSession(code);
   }
-  return NextResponse.redirect(new URL('/review', url.origin));
+  const forwardedHost = request.headers.get('x-forwarded-host');
+  const forwardedProto = request.headers.get('x-forwarded-proto') || 'https';
+  const origin = forwardedHost ? `${forwardedProto}://${forwardedHost}` : url.origin;
+  
+  return NextResponse.redirect(new URL('/review', origin));
 }
